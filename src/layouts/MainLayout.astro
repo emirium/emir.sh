@@ -1,0 +1,63 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title = "emir.sh", description = "senior fullstack engineer" } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <!-- <link rel="canonical" href={canonicalURL} /> -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- General Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Emir Smajic" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <!-- <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} /> -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} /> -->
+
+    <!-- Font -->
+    <link rel="preconnect" as="font" href="/fonts/Inter.var.woff2" type="font/woff2" crossorigin />
+
+    <meta name="theme-color" content="" />
+
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter.var.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 100 900;
+    font-stretch: narrower;
+  }
+</style>

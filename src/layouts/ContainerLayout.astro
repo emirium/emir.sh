@@ -1,0 +1,14 @@
+---
+import { twMerge } from "tailwind-merge"
+
+interface Props {
+  styles?: string
+}
+
+const { styles } = Astro.props
+let style = twMerge("max-w-4xl mx-auto px-2", styles)
+---
+
+<div class={style}>
+  <slot />
+</div>

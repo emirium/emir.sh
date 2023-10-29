@@ -1,0 +1,12 @@
+---
+import ContainerLayout from "../layouts/ContainerLayout.astro";
+const today = new Date();
+---
+
+<footer class="mt-auto border-t py-3 border-slate-100">
+	<ContainerLayout>
+		<p class="text-center text-sm text-slate-500">
+			&copy; {today.getFullYear()} Emir Smajic. All rights reserved.
+		</p>
+	</ContainerLayout>
+</footer>

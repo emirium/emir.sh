@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import ContainerLayout from '../../layouts/ContainerLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Separator from '../../components/Separator.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<MainLayout>
+	<section class="pt-10">
+		<ContainerLayout>
+			<h3 class="text-slate-400 uppercase font-medium tracking-wide">
+				Blog
+			</h3>
+			<p class="pt-2 text-4xl text-slate-700 font-medium tracking-tight leading-8">I write about full-stack development.</p>
+			<Separator />
+			<ul class="flex flex-col space-y-6">
+				{posts.map(post => <PostCard post={post} />)}
+			</ul>
+		</ContainerLayout>
+	</section>
+</MainLayout>

@@ -1,0 +1,46 @@
+---
+import { twMerge } from "tailwind-merge"
+
+type Socials = { title: string, href: string, style: string }[]
+
+const data: Socials = [
+  {
+    title: "Github",
+    href: "https://github.com/emirium",
+    style: "lg:hover:bg-slate-900"
+  },
+  {
+    title: "Twitter",
+    href: "https://twitter.com/emsmjc",
+    style: "lg:hover:bg-sky-500"
+  },
+  {
+    title: "Linkedin",
+    href: "https://linkedin.com/in/emsmjc",
+    style: "lg:hover:bg-sky-700"
+  },
+  {
+    title: "Mail",
+    href: "mailto:me@emirsmajic.com",
+    style: "lg:hover:bg-emerald-600"
+  },
+]
+
+const baseLinkStyle = "text-sm border border-slate-200 bg-slate-50 text-slate-600 rounded-full py-0.5 px-4 w-20 lg:w-24 flex justify-center items-center transition-colors lg:hover:text-white"
+---
+
+<div class="pt-4 lg:pt-8 flex space-x-2 lg:space-x-3">
+  {
+    data.map(social => (
+      <a
+        href={social.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={twMerge(baseLinkStyle, social.style)}
+        aria-roledescription="button"
+      >
+        {social.title}
+      </a>
+    ))
+  }
+</div>
