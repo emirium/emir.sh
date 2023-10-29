@@ -16,7 +16,7 @@ const posts = (await getCollection('blog')).sort(
 			<h3 class="text-slate-400 uppercase font-medium tracking-wide">
 				Blog
 			</h3>
-			<p class="pt-2 text-4xl text-slate-700 font-medium tracking-tight leading-8">I write about full-stack development.</p>
+			<p class="pt-2 text-4xl text-slate-700 font-semibold leading-8">I write about full-stack development.</p>
 			<Separator />
 			<ul class="flex flex-col space-y-6">
 				{posts.map(post => <PostCard post={post} />)}

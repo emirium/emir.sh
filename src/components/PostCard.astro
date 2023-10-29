@@ -29,7 +29,7 @@ const { post } = Astro.props
       <FormattedDate date={post.data.pubDate} />
     </span>
     <a href={`/blog/${post.slug}/`}>
-      <h4 class="text-base lg:text-2xl leading-5 lg:leading-7 text-slate-700 font-medium tracking-tighter hover:underline">{post.data.title}</h4>
+      <h4 class="text-base lg:text-2xl leading-5 lg:leading-7 text-slate-700 font-medium hover:underline">{post.data.title}</h4>
     </a>
   </div>
 </li>

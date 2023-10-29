@@ -45,7 +45,7 @@ const { title = "emir.sh", description = "senior fullstack engineer" } = Astro.p
     <meta name="theme-color" content="" />
 
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen antialiased">
     <Header />
     <slot />
     <Footer />
@@ -54,10 +54,9 @@ const { title = "emir.sh", description = "senior fullstack engineer" } = Astro.p
 
 <style is:global>
   @font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter.var.woff2") format("woff2");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi.var.woff2") format("woff2");
     font-display: swap;
     font-weight: 100 900;
-    font-stretch: narrower;
   }
 </style>
