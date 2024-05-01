@@ -1,24 +1,15 @@
 {
   "name": "emir.sh",
-  "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.50",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.2",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
-    "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.3.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.0.24"
+    "elysia": "latest"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
-  }
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
 }
