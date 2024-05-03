@@ -2,14 +2,22 @@
   "name": "emir.sh",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts",
+    "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/views/styles/main.css -o ./public/css/main.css",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "test": "bun test"
   },
   "dependencies": {
+    "@elysiajs/html": "^1.0.2",
+    "@elysiajs/static": "^1.0.3",
+    "@elysiajs/swagger": "^1.0.5",
+    "@kitajs/ts-html-plugin": "^4.0.1",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "lightningcss-cli": "^1.24.1"
   },
   "module": "src/index.js"
 }
